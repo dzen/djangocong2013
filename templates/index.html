@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>My fabulous data</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="{% static 'controllers.js' %}"></script>
+        </script>
+    </head>
+    <body ng-app="DjangoCong" ng-init="server='ws://localhost:8085';">
+        <div ng-controller="WebsocketController">
+        <h1>Updated values</h1>
+        <table>
+            {% verbatim %}
+            <tr>
+                <td>state</td><td>{{ data.state }}</td>
+            </tr>
+            <tr>
+                <td>module</td><td>{{ data.module }}</td>
+            </tr>
+            <tr>
+                <td>heater1</td><td>{{ data.heater1 }}</td>
+            </tr>
+            <tr>
+                <td>heater2</td><td>{{ data.heater2 }}</td>
+            </tr>
+            <tr>
+                <td>tcrimp1</td><td>{{ data.tcrimp1 }}</td>
+            </tr>
+            <tr>
+                <td>tcrimp2</td><td>{{ data.tcrimp2 }}</td>
+            </tr>
+            {% endverbatim %}
+        </table>
+        </div>
+    </body>
+</html>

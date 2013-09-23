@@ -1,0 +1,8 @@
+Django==1.6b4
+distribute==0.7.3
+factory-boy==2.1.2
+hiredis==0.1.1
+redis==2.8.0
+relips==0.1.0
+tulip==0.0.0
+websockets==0.1
